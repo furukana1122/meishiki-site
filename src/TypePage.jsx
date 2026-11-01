@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { TYPE_DATA, KAN_SLUG, KAN_COLOR, PALETTE } from "./typeData.js";
+import { TYPE_DATA, KAN_SLUG, KAN_COLOR, KAN_ELEMENT, PALETTE } from "./typeData.js";
 
 // 画像ファイルがまだ無い場合は、何も表示しない(ページは崩れません)
 function SafeImg({ src, alt, style }) {
@@ -31,7 +31,7 @@ function CompatIcon({ kan }) {
 
 export default function TypePage({ slug }) {
   const d = TYPE_DATA[slug];
-  const pal = PALETTE[d ? d.element : "土"];
+  const pal = PALETTE[(d && KAN_ELEMENT[d.kan]) || "土"];
 
   useEffect(() => {
     document.title = d
@@ -57,7 +57,7 @@ export default function TypePage({ slug }) {
           font-family: 'Noto Serif JP','Hiragino Mincho ProN','Yu Mincho',serif;
           padding: clamp(32px, 8vw, 72px) 20px 64px;
         }
-        .tp-wrap { max-width: 640px; margin: 0 auto; }
+        .tp-wrap { max-width: 640px; margin: 0 auto; text-align: left; }
 
         /* 上部のバッジ */
         .tp-badge {
@@ -93,16 +93,17 @@ export default function TypePage({ slug }) {
         }
         .tp-h3 {
           font-family: 'Zen Maru Gothic', sans-serif; font-weight: 700;
-          font-size: clamp(20px, 5vw, 26px); margin: 56px 0 14px;
+          font-size: clamp(20px, 5vw, 26px); margin: 56px 0 14px; text-align: left;
         }
         .tp-p { font-size: clamp(15px, 3.9vw, 17px); line-height: 2.05; letter-spacing: 0.04em; margin-bottom: 1.4em; text-align: left; }
         .tp-img-block { text-align: center; margin: 8px 0 32px; }
         .tp-img-block img { max-width: min(100%, 360px); height: auto; }
+        .tp-img-top img { width: 120px; max-width: 100%; }
 
         /* ワンポイントアドバイス */
         .tp-advice {
           margin-top: 56px; background: #fff; border-radius: 20px; padding: 26px 28px;
-          border: 1px solid var(--shadow);
+          border: 1px solid var(--shadow); text-align: left;
         }
         .tp-advice-title { font-family: 'Zen Maru Gothic', sans-serif; font-weight: 700; font-size: 20px; margin-bottom: 14px; }
         .tp-advice ul { list-style: none; }
@@ -110,9 +111,9 @@ export default function TypePage({ slug }) {
         .tp-advice li::before { content: ""; position: absolute; left: 0; top: 0.8em; width: 7px; height: 7px; border-radius: 50%; background: var(--mark); }
 
         /* 相性 */
-        .tp-compat { margin-top: 48px; }
+        .tp-compat { margin-top: 48px; text-align: center; }
         .tp-compat-title { font-family: 'Zen Maru Gothic', sans-serif; font-weight: 700; font-size: 20px; margin-bottom: 16px; }
-        .tp-compat-row { display: flex; flex-wrap: wrap; gap: 14px; }
+        .tp-compat-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
         .tp-compat-row a { display: block; text-decoration: none; border-radius: 50%; }
         .tp-compat-row a:focus-visible { outline: 3px solid #45b0d2; outline-offset: 3px; }
         .compat-img { display: block; width: clamp(64px, 18vw, 88px); height: auto; }
@@ -155,7 +156,7 @@ export default function TypePage({ slug }) {
 
             {/* 導入 */}
             <h2 className="tp-h2">{d.title}</h2>
-            <div className="tp-img-block">
+            <div className="tp-img-block tp-img-top">
               <SafeImg src={d.topImage} alt={`${d.kan}タイプのイラスト`} />
             </div>
             {d.intro.map((t, i) => <p className="tp-p" key={i}>{t}</p>)}
