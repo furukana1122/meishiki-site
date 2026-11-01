@@ -235,16 +235,16 @@ const NIKKAN_DESC = {
 
 // 日干ごとの遷移先URL（ご自身のURLに変更してください）
 const NIKKAN_URLS = {
-  "甲": "https://furu-kana.net/type-check/kinoe",
-  "乙": "https://furu-kana.net/type-check/kinoto",
-  "丙": "https://furu-kana.net/type-check/hinoe",
-  "丁": "https://furu-kana.net/type-check/hinoto",
-  "戊": "https://furu-kana.net/type-check/tsuchinoe",
-  "己": "https://furu-kana.net/type-check/tsuchinoto",
-  "庚": "https://furu-kana.net/type-check/kanoe",
-  "辛": "https://furu-kana.net/type-check/kanoto",
-  "壬": "https://furu-kana.net/type-check/mizunoe",
-  "癸": "https://furu-kana.net/type-check/mizunoto",
+  "甲": "https://meishiki.furu-kana.net/type-check/kinoe",
+  "乙": "https://meishiki.furu-kana.net/type-check/kinoto",
+  "丙": "https://meishiki.furu-kana.net/type-check/hinoe",
+  "丁": "https://meishiki.furu-kana.net/type-check/hinoto",
+  "戊": "https://meishiki.furu-kana.net/type-check/tsuchinoe",
+  "己": "https://meishiki.furu-kana.net/type-check/tsuchinoto",
+  "庚": "https://meishiki.furu-kana.net/type-check/kanoe",
+  "辛": "https://meishiki.furu-kana.net/type-check/kanoto",
+  "壬": "https://meishiki.furu-kana.net/type-check/mizunoe",
+  "癸": "https://meishiki.furu-kana.net/type-check/mizunoto",
 };
 
 const mod = (n, m) => ((n % m) + m) % m;
