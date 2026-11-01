@@ -2,7 +2,7 @@
 export default {
   kan: "癸",
   yomi: "みずのと",
-  catchcopy: "踏まれても立ち上がる",
+  catchcopy: "与え上手なスーパー秘書",
   typeName: "雨タイプ",
   element: "雨",
   title: "〈癸さん〉ってこんな人",

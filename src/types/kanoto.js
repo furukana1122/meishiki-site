@@ -2,7 +2,7 @@
 export default {
   kan: "辛",
   yomi: "かのと",
-  catchcopy: "踏まれても立ち上がる",
+  catchcopy: "自己研鑽を続ける挑戦者",
   typeName: "宝石タイプ",
   element: "宝石",
   title: "〈辛さん〉ってこんな人",

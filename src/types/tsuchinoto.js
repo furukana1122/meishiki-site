@@ -2,7 +2,7 @@
 export default {
   kan: "己",
   yomi: "つちのと",
-  catchcopy: "踏まれても立ち上がる",
+  catchcopy: "仲間思いの努力家",
   typeName: "大地タイプ",
   element: "大地",
   title: "〈己さん〉ってこんな人",
