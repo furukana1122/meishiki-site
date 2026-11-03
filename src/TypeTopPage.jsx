@@ -58,6 +58,12 @@ export default function TypeTopPage() {
   useEffect(() => {
     document.title = "四柱推命タイプ診断｜FURUKANA Garden";
     document.body.style.background = "#fff";
+    // index.css で #root の幅が制限されているため、このページだけ制限を外して、画面の横幅いっぱいに使う
+    const rootEl = document.getElementById("root");
+    if (rootEl) {
+      rootEl.style.width = "100%";
+      rootEl.style.maxWidth = "none";
+    }
     window.scrollTo(0, 0);
   }, []);
 
@@ -68,7 +74,6 @@ export default function TypeTopPage() {
         * { box-sizing: border-box; margin: 0; padding: 0; }
         .tt-root {
           min-height: 100vh; background: #fff; color: #323232; text-align: left;
-          overflow-x: hidden; overflow-x: clip; /* 画面幅いっぱいの水色が、横スクロールを出さないように */
           font-family: 'Noto Serif JP','Hiragino Mincho ProN','Yu Mincho',serif;
         }
         .tt-wrap { max-width: 880px; margin: 0 auto; padding: clamp(32px, 7vw, 72px) 20px 0; }
@@ -110,7 +115,6 @@ export default function TypeTopPage() {
         /* 一番下の水色のエリア */
         .tt-picker {
           margin-top: clamp(64px, 12vw, 112px); background: #d3ebf2;
-          width: 100vw; margin-left: calc(50% - 50vw); /* 親の幅に関係なく、画面の横幅いっぱいに広げる */
           padding: clamp(48px, 9vw, 80px) 20px clamp(56px, 10vw, 96px); text-align: center;
         }
         .tt-picker-title {
