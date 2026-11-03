@@ -191,8 +191,6 @@ export default function TypePage({ slug }) {
                 ))}
               </div>
             </div>
-
-            <div className="tp-back"><a href="/">命式鑑定にもどる</a></div>
           </div>
         )}
         <div className="tp-footer">© FURUKANA Garden</div>
