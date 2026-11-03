@@ -80,11 +80,11 @@ export default function TypePage({ slug }) {
           border: 3px solid #1d1d1d; border-radius: 50% 50% 46% 54% / 60% 45% 55% 40%;
           transform: rotate(-5deg); pointer-events: none;
         }
-        .tp-yomi { font-size: clamp(10px, 2.6vw, 13px); font-weight: 700; letter-spacing: 0.1em; }
-        .tp-kan { font-size: clamp(38px, 10vw, 58px); font-weight: 700; line-height: 1.1; }
+        .tp-yomi { font-size: clamp(10px, 2.6vw, 13px); font-weight: 700; letter-spacing: 0.1em; line-height: 1; margin-bottom: 1px; }
+        .tp-kan { font-size: clamp(38px, 10vw, 58px); font-weight: 700; line-height: 1; }
         .tp-titles { font-family: 'Zen Maru Gothic', sans-serif; min-width: 0; }
-        .tp-catch { color: var(--catch); font-weight: 700; font-size: clamp(14px, 3.6vw, 20px); margin-bottom: 4px; }
-        .tp-type { font-weight: 900; font-size: clamp(26px, 7.4vw, 46px); line-height: 1.2; letter-spacing: 0.04em; }
+        .tp-catch { color: var(--catch); font-weight: 700; font-size: clamp(14px, 3.6vw, 20px); line-height: 1.3; margin-bottom: 2px; }
+        .tp-type { font-weight: 900; font-size: clamp(26px, 7.4vw, 46px); line-height: 1.2; letter-spacing: 0.04em; margin: 0; }
 
         /* 本文 */
         .tp-h2 {
