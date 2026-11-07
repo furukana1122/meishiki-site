@@ -57,9 +57,9 @@ export default function SessionPage() {
 
         /* 猫と吹き出し */
         .ss-cat { text-align: center; }
-        .ss-cat img { width: min(100%, 260px); height: auto; }
+        .ss-cat img { display: block; margin: 0 auto; width: min(100%, 260px); height: auto; }
         .ss-say {
-          position: relative; display: inline-block; max-width: 100%; margin-bottom: 18px;
+          position: relative; display: block; width: fit-content; max-width: 100%; margin: 0 auto 18px;
           background: #fff; border: 3px solid #323232; border-radius: 22px; padding: 9px 20px;
           font-family: 'Zen Maru Gothic', sans-serif; font-weight: 700; font-size: clamp(14px, 3.8vw, 16px);
           letter-spacing: 0.06em; line-height: 1.5; transform: rotate(-2deg);
