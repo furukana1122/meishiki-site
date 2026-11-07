@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 const ITEMS = [
   { label: "命式を出す", href: "/", match: (p) => p === "/" },
   { label: "タイプ診断", href: "/type-check", match: (p) => p.startsWith("/type-check") },
-  { label: "公式サイト", href: "https://furu-kana.net/", match: () => false },
+  { label: "セッション", href: "/session", match: (p) => p.startsWith("/session") },
 ];
 
 // 何px スクロールしたらメニューが浮き上がるか
