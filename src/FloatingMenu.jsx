@@ -13,16 +13,31 @@ const ITEMS = [
 
 // 何px スクロールしたらメニューが浮き上がるか
 const SHOW_AFTER = 240;
+// これ以下しかスクロールできない短いページでは、最初から表示します(px)
+const SHORT_PAGE = 160;
 
 export default function FloatingMenu() {
   const [visible, setVisible] = useState(false);
   const path = window.location.pathname;
 
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > SHOW_AFTER);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const update = () => {
+      // どれだけスクロールできるページか(下の余白ぶんを含みます)
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      // ほとんどスクロールできない短いページでは、最初から表示します
+      setVisible(max <= SHORT_PAGE || window.scrollY > SHOW_AFTER);
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    // 命式の結果が出るなど、ページの高さが変わったときも判定し直す
+    const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(update) : null;
+    if (ro) ro.observe(document.documentElement);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+      if (ro) ro.disconnect();
+    };
   }, []);
 
   return (
